@@ -1,0 +1,59 @@
+.home-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    height: 100vh;
+    background-color: #9DBEBB;
+}
+
+#profile-image {
+    border-radius: 50%;
+    flex: 0 1 180px;
+    max-width: 25vw; 
+    max-height: 25vw;
+    width: 25vw; 
+    height: 25vw;
+    margin-left: 6vw;
+    margin-right: 3vw;
+    object-fit: cover;
+}
+
+#welcome-text{
+    width: 550px;
+    max-width: 80vw;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 3.3rem;
+    line-height: 1.4;
+    color: #000000;
+    margin: 0 0 1rem 0;
+}
+
+.span-name {
+    color: #F4E9CD;
+}
+
+@media (max-width: 768px) {
+    #profile-image {
+      order: 2;
+      flex: 0 1 auto; 
+      max-width: 70vw; 
+      max-height: 70vw; 
+      width: 70vw; 
+      height: 70vw;
+    }
+  
+    #welcome-text {
+      text-align: center; 
+      font-size: 10vw; 
+      order: 1;
+    }
+  
+    .home-section {
+      gap: 1rem;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
+  

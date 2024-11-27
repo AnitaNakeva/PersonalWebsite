@@ -1,10 +1,58 @@
-.home-section{
+.home-section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
     align-items: center;
     height: 100vh;
     background-color: #9DBEBB;
+}
+
+.welcome-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#circle-background {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 23vw;
+    height: 95vh;
+}
+
+.underline {
+    margin: 0 auto;
+    display: block;
+    transform: rotate(-1deg);
+}
+
+.underline path {
+    stroke: #F4E9CD; /* Line color */
+    stroke-width: 5; /* Line thickness */
+    stroke-linecap: round; /* Rounded ends */
+    stroke-dasharray: 0; /* To be dynamically calculated */
+    stroke-dashoffset: 0; /* Initially hidden */
+}
+
+#welcome-text-laptop {
+    display: block;
+}
+
+.welcome-text {
+    width: 600px;
+    max-width: 80vw;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 3.5rem;
+    line-height: 1.4;
+    color: #000000;
+    margin: 0 0 0rem 0;
+}
+
+#welcome-text-phone {
+    display: none;
 }
 
 #profile-image {
@@ -17,26 +65,31 @@
     margin-left: 6vw;
     margin-right: 3vw;
     object-fit: cover;
-}
-
-#welcome-text{
-    width: 550px;
-    max-width: 80vw;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    font-size: 3.3rem;
-    line-height: 1.4;
-    color: #000000;
-    margin: 0 0 1rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 .span-name {
     color: #F4E9CD;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { 
+    .underline {
+        width: 215px;
+        order: 2;
+        margin-left: 30vw;
+    }
+
+    .underline path {
+        stroke-width: 10;
+    }
+
+    #circle-background {
+      display: none;
+    }
+
     #profile-image {
-      order: 2;
+      order: 3;
       flex: 0 1 auto; 
       max-width: 70vw; 
       max-height: 70vw; 
@@ -44,16 +97,31 @@
       height: 70vw;
     }
   
-    #welcome-text {
+    #welcome-text-phone {
+      margin-top: 6vh;
+      display: block;
+      visibility: visible;
       text-align: center; 
       font-size: 10vw; 
       order: 1;
     }
-  
+
+    #welcome-text-laptop {
+        display: none;
+    }
+
     .home-section {
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+  
+    .welcome-info {
       gap: 1rem;
-      flex-direction: column;
-      justify-content: space-around;
+      flex-direction: row;
+      justify-content: center;
+      gap: 0;
     }
   }
   

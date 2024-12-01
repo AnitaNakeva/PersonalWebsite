@@ -11,15 +11,72 @@
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/certificates.css">
   <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 
 </head>
 <body>
   <header>
   </header>
+
+  <!-- Navigation Section -->
+  <nav>
+    <ul>
+      <li>
+        <a href="#home">
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="#images">
+          <i class="fas fa-image"></i>
+          <span>Images</span>
+        </a>
+      </li>
+      <li>
+        <a href="#files">
+          <i class="fas fa-file"></i>
+          <span>Files</span>
+        </a>
+      </li>
+      <li>
+        <a href="#games">
+          <i class="fas fa-gamepad"></i>
+          <span>Games</span>
+        </a>
+      </li>
+      <li>
+        <a href="#books">
+          <i class="fas fa-book"></i>
+          <span>Books</span>
+        </a>
+      </li>
+      <li>
+        <a href="#notifications">
+          <i class="fas fa-bell"></i>
+          <span>Notifications</span>
+        </a>
+      </li>
+      <li>
+        <a href="#settings">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+      </li>
+      <li>
+        <a href="#profile">
+          <i class="fas fa-user"></i>
+          <span>Profile</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
   <main>
     <!-- Home Section -->
@@ -33,21 +90,40 @@
               stroke="#F4E9CD" stroke-width="3" stroke-linecap="round" />
         </svg>
       </div>
-      <img id="circle-background" src="images/half-circle-background.png">
+      <img class="circle-background" src="images/half-circle-background.png">
     </section>
 
     <!-- About Section -->
     <section id="about" class="about-section">
-      <h1>About Me</h1>
-      <p>I am a student at ...</p>
+      <div class="info">
+        <div class="div-info">I am a student at <strong>New Bulgarian University</strong> with <strong>Computer Science</strong></div>
+        <div class="div-info">I graduated with a perfect <strong>GPA of 6.00</strong> from the Math and Science High School in Blagoevgrad</div>
+        <div class="div-info">I am in the top 1% students at <strong>SoftUni</strong> where I further developed my technical skills</div>
+        <div class="div-info">My primary focus is on <strong>.NET development</strong></div>
+        <div class="div-info">I am also familiar with <strong>Front-End development</strong></div>
+      </div>
+      <img class="circle-reversed-background" src="images/photo-half-circle-background-reversed.png">
     </section>
 
     <!-- Certificates Section -->
     <section id="certificates" class="certificates-section">
-      <h1>Certificates</h1>
-      <div class="certificate-slider">
-        <!-- Certificates go here -->
-      </div>
+      <ul class="list">
+        <li class="hide">
+          <img src="images/c1.png" alt="Certificate 1">
+        </li>
+        <li class="prev">
+          <img src="images/c2.png" alt="Certificate 2">
+        </li>
+        <li class="act">
+          <img src="images/c3.png" alt="Certificate 3">
+        </li>
+        <li class="next">
+          <img src="images/c4.png" alt="Certificate 4">
+        </li>
+        <li class="next new-next">
+          <img src="images/c5.png" alt="Certificate 5">
+        </li>
+      </ul>
     </section>
 
     <!-- Contact Section -->
@@ -59,10 +135,14 @@
         <li>Facebook: Anita Nakeva</li>
         <li>Instagram: @anitanakevak</li>
       </ul>
+      <img class="circle-background" src="images/half-circle-background.png">
     </section>
   </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+  <script src="line-animation.js"></script>
+  <script src="carousel-animation.js"></script>
 </body>
 </html>

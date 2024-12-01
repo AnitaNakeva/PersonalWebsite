@@ -1,8 +1,11 @@
 .home-section {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     background-color: #9DBEBB;
+    position: relative;
+    overflow: hidden; 
 }
 
 .welcome-info {
@@ -14,12 +17,13 @@
     align-items: center;
 }
 
-#circle-background {
+.circle-background {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 23vw;
     height: 95vh;
+    z-index: 0;
 }
 
 .underline {
@@ -84,7 +88,7 @@
         stroke-width: 10;
     }
 
-    #circle-background {
+    .circle-background {
       display: none;
     }
 

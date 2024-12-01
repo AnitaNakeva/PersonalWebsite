@@ -1,0 +1,16 @@
+.contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #9DBEBB;
+    position: relative;
+    overflow: hidden; 
+}
+
+@media (max-width: 768px) {
+    .circle-background {
+        display: none;
+    }
+}
+

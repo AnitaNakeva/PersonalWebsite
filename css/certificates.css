@@ -48,6 +48,14 @@
     filter: blur(3px);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   }
+
+  .list .prev:hover {
+    cursor: pointer;
+  }
+
+  .list .next:hover {
+    cursor: pointer;
+  }
   
   .list .next {
     opacity: 0.5;

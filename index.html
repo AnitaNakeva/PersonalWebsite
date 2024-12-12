@@ -20,63 +20,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body onload="manageSections()">
   <header>
   </header>
 
   <!-- Navigation Section -->
-  <nav>
-    <ul>
-      <li>
-        <a href="#home">
-          <i class="fas fa-home"></i>
-          <span>Dashboard</span>
-        </a>
+  <nav class="navbar">
+    <ul class="navbar-list">
+      <li class="navbar-item">
+        <a href="#home" class="navbar-link"><i class="fas fa-home navbar-icon"></i></a>
       </li>
-      <li>
-        <a href="#images">
-          <i class="fas fa-image"></i>
-          <span>Images</span>
-        </a>
+      <li class="navbar-item">
+        <a href="#about" class="navbar-link"><i class="fas fa-user navbar-icon"></i></a>
       </li>
-      <li>
-        <a href="#files">
-          <i class="fas fa-file"></i>
-          <span>Files</span>
-        </a>
+      <li class="navbar-item">
+        <a href="#certificates" class="navbar-link"><i class="fas fa-award navbar-icon"></i></a>
       </li>
-      <li>
-        <a href="#games">
-          <i class="fas fa-gamepad"></i>
-          <span>Games</span>
-        </a>
-      </li>
-      <li>
-        <a href="#books">
-          <i class="fas fa-book"></i>
-          <span>Books</span>
-        </a>
-      </li>
-      <li>
-        <a href="#notifications">
-          <i class="fas fa-bell"></i>
-          <span>Notifications</span>
-        </a>
-      </li>
-      <li>
-        <a href="#settings">
-          <i class="fas fa-cog"></i>
-          <span>Settings</span>
-        </a>
-      </li>
-      <li>
-        <a href="#profile">
-          <i class="fas fa-user"></i>
-          <span>Profile</span>
-        </a>
+      <li class="navbar-item">
+        <a href="#contact" class="navbar-link"><i class="fas fa-envelope navbar-icon"></i></a>
       </li>
     </ul>
   </nav>
+
 
   <main>
     <!-- Home Section -->
@@ -109,19 +74,19 @@
     <section id="certificates" class="certificates-section">
       <ul class="list">
         <li class="hide">
-          <img src="images/c1.png" alt="Certificate 1">
+          <img src="images/c2.png" alt="Certificate 1">
         </li>
         <li class="prev">
-          <img src="images/c2.png" alt="Certificate 2">
+          <img src="images/c1.png" alt="Certificate 2">
         </li>
         <li class="act">
-          <img src="images/c3.png" alt="Certificate 3">
+          <img src="images/c8.png" alt="Certificate 3">
         </li>
         <li class="next">
-          <img src="images/c4.png" alt="Certificate 4">
+          <img src="images/c7.png" alt="Certificate 4">
         </li>
         <li class="next new-next">
-          <img src="images/c5.png" alt="Certificate 5">
+          <img src="images/c6.png" alt="Certificate 5">
         </li>
       </ul>
     </section>
@@ -144,5 +109,12 @@
   <script src="https://hammerjs.github.io/dist/hammer.js"></script>
   <script src="line-animation.js"></script>
   <script src="carousel-animation.js"></script>
+  <script src="navbar-activate.js"></script>
+  <script src="transitions.js"></script>
+  <script>
+    function setCurrentScrollPos() {
+        window.scroll(0, window.scrollY);
+    }
+  </script>
 </body>
 </html>

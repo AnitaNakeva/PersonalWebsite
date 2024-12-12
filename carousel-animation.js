@@ -1,6 +1,5 @@
 const $ = selector => document.querySelector(selector);
 
-// Image paths for the slider
 const imagePaths = [
   "images/c1.png",
   "images/c2.png",
@@ -15,72 +14,79 @@ const imagePaths = [
 let currentIndex = 2;
 
 function next() {
-  if ($(".hide")) {
-    $(".hide").remove();
+  const hideEl = $(".hide");
+  if (hideEl) hideEl.remove();
+
+  const prevEl = $(".prev");
+  if (prevEl) {
+    prevEl.classList.add("hide");
+    prevEl.classList.remove("prev");
   }
 
-  if ($(".prev")) {
-    $(".prev").classList.add("hide");
-    $(".prev").classList.remove("prev");
+  const actEl = $(".act");
+  if (actEl) {
+    actEl.classList.add("prev");
+    actEl.classList.remove("act");
   }
 
-  $(".act").classList.add("prev");
-  $(".act").classList.remove("act");
+  const nextEl = $(".next");
+  if (nextEl) {
+    nextEl.classList.add("act");
+    nextEl.classList.remove("next");
+  }
 
-  $(".next").classList.add("act");
-  $(".next").classList.remove("next");
-
-  $(".new-next").classList.remove("new-next");
+  const newNextEl = $(".new-next");
+  if (newNextEl) newNextEl.classList.remove("new-next");
 
   currentIndex = (currentIndex + 1) % imagePaths.length;
-  const addedEl = document.createElement("li");
+  const newNextItem = document.createElement("li");
   const img = document.createElement("img");
   img.src = imagePaths[currentIndex];
   img.alt = `Certificate ${currentIndex + 1}`;
-  addedEl.appendChild(img);
-  $(".list").appendChild(addedEl);
-  addedEl.classList.add("next", "new-next");
+  newNextItem.appendChild(img);
+  $(".list").appendChild(newNextItem);
+  newNextItem.classList.add("next", "new-next");
 }
 
 function prev() {
-  $(".new-next").remove();
+  const newNextEl = $(".new-next");
+  if (newNextEl) newNextEl.remove();
 
-  $(".next").classList.add("new-next");
+  const nextEl = $(".next");
+  if (nextEl) nextEl.classList.add("new-next");
 
-  $(".act").classList.add("next");
-  $(".act").classList.remove("act");
+  const actEl = $(".act");
+  if (actEl) {
+    actEl.classList.add("next");
+    actEl.classList.remove("act");
+  }
 
-  $(".prev").classList.add("act");
-  $(".prev").classList.remove("prev");
+  const prevEl = $(".prev");
+  if (prevEl) {
+    prevEl.classList.add("act");
+    prevEl.classList.remove("prev");
+  }
 
-  $(".hide").classList.add("prev");
-  $(".hide").classList.remove("hide");
+  const hideEl = $(".hide");
+  if (hideEl) {
+    hideEl.classList.add("prev");
+    hideEl.classList.remove("hide");
+  }
 
   currentIndex = (currentIndex - 1 + imagePaths.length) % imagePaths.length;
-  const addedEl = document.createElement("li");
+  const newPrevItem = document.createElement("li");
   const img = document.createElement("img");
   img.src = imagePaths[currentIndex];
   img.alt = `Certificate ${currentIndex + 1}`;
-  addedEl.appendChild(img);
-  $(".list").insertBefore(addedEl, $(".list").firstChild);
-  addedEl.classList.add("hide");
+  newPrevItem.appendChild(img);
+  $(".list").insertBefore(newPrevItem, $(".list").firstChild);
+  newPrevItem.classList.add("hide");
 }
 
-const slider = $(".list"),
-  swipe = new Hammer($(".swipe"));
-
-slider.onclick = event => {
+document.querySelector(".list").addEventListener("click", event => {
   if (event.target.closest("li").classList.contains("next")) {
     next();
   } else if (event.target.closest("li").classList.contains("prev")) {
     prev();
   }
-};
-
-swipe.on("swipeleft", () => {
-  next();
-});
-
-swipe.on("swiperight", () => {
-  prev();
 });

@@ -1,0 +1,11 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    background-color: #efece5;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+  }

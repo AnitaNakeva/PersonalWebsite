@@ -1,16 +1,66 @@
 .contact-section {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     background-color: #9DBEBB;
+    overflow: visible;
+}
+
+.half-circle-background {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 23vw;
+    height: 95vh;
+    z-index: 0;
+}
+
+.contact-section ul {
+    margin-right: 15vw;
+    margin-left: 17vw;
+    display: flex;
+    justify-content: center;
+    gap: 2.2rem;
+    list-style: none;
+    padding: 0;
+}
+
+.contact-section ul img {
+    opacity: 1;
     position: relative;
-    overflow: hidden; 
+    z-index: 1;
+    width: 14vh;
+    height: 14vh;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.contact-section ul img:hover {
+    transform: scale(1.1);
+    opacity: 0.6;
 }
 
 @media (max-width: 768px) {
-    .circle-background {
-        display: none;
+    .contact-section ul {
+        margin-top: 10vh;
+        margin-right: 40vw;
+        margin-left: 40vw;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .contact-section ul img {
+        width: 20vw;
+        height: 20vw;
+        opacity: 1;
+    }
+
+    .contact-section ul img:hover {
+        transform: scale(1.1);
+        opacity: 1;
     }
 }
-

@@ -15,6 +15,7 @@
     width: 80vw;
     overflow: hidden;
     margin-right: 15vw;
+    margin-left: 9vw;
   }
   
   .list li {
@@ -91,6 +92,7 @@
         width: 100vw;
         margin-right: 0;
         padding-left: 0;
+        margin-left: 0;
     }
 
     .list li {

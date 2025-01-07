@@ -109,7 +109,7 @@ body {
     position: fixed;
     top: 2rem;
     left: 2rem;
-    z-index: 1001;
+    z-index: 1000;
     cursor: pointer;
     background-color: #031926;
     padding: 0.8rem 1rem;
@@ -131,21 +131,31 @@ body {
     position: fixed;
     top: 2rem;
     left: 2rem;
-    transform: translateY(-180%);
-    width: 0.6%;
-    height: 35%;
+    transform: scaleY(0); /* Initially collapsed */
+    transform-origin: top; /* Transform from the top */
+    width: 0.1rem;
+    height: auto;
     background-color: #031926;
     padding: 1.95rem;
-    border-radius: 0;
-    box-shadow: none;
-    transition: height 0.3s ease;
-    z-index: 1000;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border-radius: 1rem;
     box-shadow: 8px 5px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1001;
+    transition: transform 0.3s ease, opacity 0.2s ease; /* Smooth transform with opacity */
+    opacity: 0; /* Start invisible */
   }
 
   .navbar.open {
-    transform: translateY(0);
+    transform: scaleY(1); /* Expand smoothly */
+    opacity: 1; /* Fade in */
+    transition: transform 0.3s ease, opacity 0.1s ease; /* Prioritize transform on open */
+  }
+
+  .navbar.closing {
+    transform: scaleY(0); /* Collapse smoothly */
+    opacity: 0; /* Fade out */
+    transition: transform 0.2s ease, opacity 0.3s ease; /* Prioritize opacity on close */
   }
 
   .hamburger-menu.hidden {
@@ -156,15 +166,15 @@ body {
   .navbar-list {
     display: flex;
     flex-direction: column;
-    gap: 0rem;
-    margin-top: -2rem;
+    gap: 1rem;
+    margin-top: 0rem;
     list-style: none;
     padding: 0;
   }
 
   .navbar-item {
     text-align: center;
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 
   .navbar-link {

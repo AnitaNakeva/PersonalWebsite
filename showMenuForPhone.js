@@ -3,7 +3,6 @@ const navbar = document.querySelector('.navbar');
 
 function toggleMenu() {
   navbar.classList.toggle('open');
-  hamburgerMenu.classList.toggle('hidden');
 }
 
 hamburgerMenu.addEventListener('click', toggleMenu);
@@ -13,7 +12,6 @@ const navbarLinks = document.querySelectorAll('.navbar-link');
 navbarLinks.forEach(link => {
   link.addEventListener('click', () => {
     navbar.classList.remove('open');
-    hamburgerMenu.classList.remove('hidden');
   });
 });
 
@@ -23,7 +21,6 @@ document.addEventListener('click', (event) => {
   if (!navbar.contains(event.target) && !hamburgerMenu.contains(event.target)) {
     if (navbar.classList.contains('open')) {
       navbar.classList.remove('open');
-      hamburgerMenu.classList.remove('hidden');
     }
   }
 });

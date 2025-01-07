@@ -116,6 +116,7 @@ body {
     border-radius: 20%;
     transition: opacity 0.3s ease;
     box-shadow: 8px 5px 10px rgba(0, 0, 0, 0.25);
+    -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile */
   }
 
   .hamburger-menu span {
@@ -186,10 +187,12 @@ body {
     opacity: 1;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
+    -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile */
   }
 
   .navbar-link:hover {
     color: #ffffff;
     transform: scale(1.1);
   }
+  
 }

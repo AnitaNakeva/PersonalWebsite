@@ -33,7 +33,7 @@
 }
 
 .underline path {
-    stroke: #F4E9CD; /* Line color */
+    stroke: #F4E9CD;
     stroke-width: 5; /* Line thickness */
     stroke-linecap: round; /* Rounded ends */
     stroke-dasharray: 0; /* To be dynamically calculated */
@@ -94,7 +94,7 @@
 
     #profile-image {
       order: 3;
-      flex: 0 1 auto; 
+      flex: 0 1 auto; /* flex-grow, flex-shrink, flex-basis */
       max-width: 70vw; 
       max-height: 70vw; 
       width: 70vw; 
@@ -112,14 +112,14 @@
     }
 
     #welcome-text-laptop {
-        display: none;
+      display: none;
     }
 
     .home-section {
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        gap: 3rem;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3rem;
     }
   
     .welcome-info {

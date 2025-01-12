@@ -20,7 +20,7 @@ body {
 }
 
 .navbar-list {
-  list-style: none;
+  list-style: none; /* Removes list dots */
   padding: 0;
   margin: 0;
   width: 100%;
@@ -70,7 +70,7 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-size: 0.8rem;
-  white-space: nowrap;
+  white-space: nowrap; /* Does not allow the text to move to another row */
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
   opacity: 0;
   visibility: hidden;
@@ -84,7 +84,7 @@ body {
 }
 
 .navbar-link::after {
-  content: "";
+  content: ""; /*Creates arrow next to to the icon */
   position: absolute;
   right: 110%; /* Position arrow to the left of the icon */
   top: 50%;
@@ -157,11 +157,6 @@ body {
     transform: scaleY(0); /* Collapse smoothly */
     opacity: 0; /* Fade out */
     transition: transform 0.2s ease, opacity 0.3s ease; /* Prioritize opacity on close */
-  }
-
-  .hamburger-menu.hidden {
-    opacity: 0;
-    pointer-events: none;
   }
 
   .navbar-list {

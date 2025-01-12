@@ -5,114 +5,103 @@
     height: 100vh;
     background-color: #9DBEBB;
   }
-  
+
+.list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+  margin-right: 15vw;
+  margin-left: 9vw;
+}
+
+.list li {
+  list-style: none;
+  position: absolute;
+  width: 23vw;
+  height: 66vh;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0.25;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 1;
+}
+
+.list li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.list .act {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  z-index: 3;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.list .prev {
+  opacity: 0.5;
+  transform: translateX(-23vw) scale(0.85);
+  filter: blur(3px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.list .prev:hover {
+  cursor: pointer;
+}
+
+.list .next:hover {
+  cursor: pointer;
+}
+
+.list .next {
+  opacity: 0.5;
+  transform: translateX(23vw) scale(0.85);
+  filter: blur(3px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.list .hide {
+  transform: translateX(-40vw) scale(0.85);
+  opacity: 0;
+}
+
+.list .new-next {
+  transform: translateX(40vw) scale(0.85);
+  opacity: 0;
+}
+
+@media (max-width: 768px) { 
   .list {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    width: 80vw;
-    overflow: hidden;
-    margin-right: 15vw;
-    margin-left: 9vw;
+      height: 100vh;
+      width: 100vw;
+      margin-right: 0;
+      padding-left: 0;
+      margin-left: 0;
   }
-  
+
   .list li {
-    list-style: none;
-    position: absolute;
-    width: 23vw;
-    height: 66vh;
-    border-radius: 10px;
-    overflow: hidden;
-    opacity: 0.25;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    z-index: 1;
+      width: 70vw;
+      height: 50vh;
   }
-  
-  .list li img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .list .act {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    z-index: 3;
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
-  }
-  
+
   .list .prev {
-    opacity: 0.5;
-    transform: translateX(-23vw) scale(0.85);
-    filter: blur(3px);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+      transform: translateY(-50vh) scale(0.85);
   }
 
-  .list .prev:hover {
-    cursor: pointer;
-  }
-
-  .list .next:hover {
-    cursor: pointer;
-  }
-  
   .list .next {
-    opacity: 0.5;
-    transform: translateX(23vw) scale(0.85);
-    filter: blur(3px);
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+      transform: translateY(50vh) scale(0.85);
   }
-  
+
   .list .hide {
-    transform: translateX(-40vw) scale(0.85);
-    opacity: 0;
+      transform: translateY(-60vh) scale(0.85);
   }
-  
+
   .list .new-next {
-    transform: translateX(40vw) scale(0.85);
-    opacity: 0;
+      transform: translateY(60vh) scale(0.85);
   }
-  
-  .swipe {
-    width: 60vw;
-    height: 70vh;
-    position: absolute;
-    background-color: transparent;
-    border-radius: 2px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  @media (max-width: 768px) { 
-    .list {
-        height: 100vh;
-        width: 100vw;
-        margin-right: 0;
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-    .list li {
-        width: 70vw;
-        height: 50vh;
-    }
-
-    .list .prev {
-        transform: translateY(-50vh) scale(0.85);
-    }
-
-    .list .next {
-        transform: translateY(50vh) scale(0.85);
-    }
-
-    .list .hide {
-        transform: translateY(-60vh) scale(0.85);
-    }
-
-    .list .new-next {
-        transform: translateY(60vh) scale(0.85);
-    }
 }
